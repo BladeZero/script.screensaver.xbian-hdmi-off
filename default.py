@@ -32,7 +32,7 @@ class Screensaver(xbmcgui.WindowXMLDialog):
 
 if __name__ == '__main__':
     print '1 Python Screensaver Started'
-    os.system('vcgencmd display_power 0')
+    os.popen('vcgencmd display_power 0')
     screensaver_gui = Screensaver(
             'script-%s-main.xml' % __scriptname__,
             __path__,
@@ -40,6 +40,6 @@ if __name__ == '__main__':
         )
     screensaver_gui.doModal()
     print '5 Python Screensaver Exited'
-    os.system('vcgencmd display_power 1')
+    os.popen('vcgencmd display_power 1')
     del screensaver_gui
     sys.modules.clear()
