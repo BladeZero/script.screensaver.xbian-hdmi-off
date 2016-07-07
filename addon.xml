@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.screensaver.xbian-hdmioff"
        name="HDMI Off"
-       version="0.0.9"
+       version="0.1.0"
        provider-name="Dlinny (anton.zm@gmail.com)">
   <requires>
     <import addon="xbmc.python"

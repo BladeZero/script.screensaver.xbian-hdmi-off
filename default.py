@@ -19,7 +19,7 @@ class Screensaver(xbmcgui.WindowXMLDialog):
 
         def onScreensaverDeactivated(self):
             print '3 ExitMonitor: sending exit_callback'
-            os.system("vcgencmd display_power 1")
+            os.system('vcgencmd display_power 1')
             self.exit_callback()
 
     def onInit(self):
@@ -33,5 +33,12 @@ class Screensaver(xbmcgui.WindowXMLDialog):
 
 if __name__ == '__main__':
     print '1 Python Screensaver Started'
+    os.system('vcgencmd display_power 0')
+    screensaver_gui = Screensaver(
+            'script-%s-main.xml' % __scriptname__,
+            __path__,
+            'default',
+        )
+    screensaver_gui.doModal()
+    del screensaver_gui
     sys.modules.clear()
-    os.system("vcgencmd display_power 0")    
